@@ -1,27 +1,28 @@
 <template>
   <div class="APP">
-    <main>
-      <Nuxt />
-    </main>
-    <footer>
+    <header>
       <div>
-        <!-- Copyright 2020 -->
+        Blockchain examples
       </div>
-      <div>
-        Examples:
+      <nav>
         <nuxt-link to="/blockchain">
           Blockchain
         </nuxt-link>
         <nuxt-link to="/">
           Mining
         </nuxt-link>
-      </div>
-    </footer>
+      </nav>
+    </header>
+    <main>
+      <Nuxt />
+    </main>
   </div>
 </template>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Mono&display=swap');
+
+$headerBreakpoint: 650px;
 
 html {
   font-family: 'Nunito', sans-serif;
@@ -59,21 +60,20 @@ html {
     flex: 1;
   }
 
-  & > footer {
+  & > header {
     flex: 0;
   }
 }
 
 .APP > main {
   width: 100%;
-  max-width: 900px;
+  max-width: 850px;
 
   padding: 30px 20px;
 }
 
-.APP > footer {
+.APP > header {
   background-color: #414141;
-  padding: 10px 30px;
   width: 100%;
 
   display: flex;
@@ -83,21 +83,34 @@ html {
 
   flex-direction: column;
 
-  @media all and (min-width: 600px) {
+  @media all and (min-width: $headerBreakpoint) {
     flex-direction: row;
   }
 
   & > div {
-    padding: 5px 0;
+    padding: 15px 30px;
+    display: none;
+
+    @media all and (min-width: $headerBreakpoint) {
+      display: block;
+    }
+  }
+
+  & > nav {
+    display: flex;
+    flex-direction: row;
   }
 
   a {
+    display: inline-block;
     color: inherit;
     text-decoration: none;
 
+    padding: 15px 30px;
+    margin: 0;
+
     &:hover {
-      color: #fff;
-      text-decoration: underline;
+      background-color: rgba(0,0,0,0.1);
     }
   }
 }

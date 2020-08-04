@@ -197,6 +197,7 @@ export default {
   label, input, textarea {
     display: block;
     width: 100%;
+    outline: none;
   }
 
   input, textarea {
