@@ -5,6 +5,9 @@
         Blockchain examples
       </div>
       <nav>
+        <nuxt-link to="/hash">
+          Hash
+        </nuxt-link>
         <nuxt-link to="/blockchain">
           Blockchain
         </nuxt-link>
@@ -117,5 +120,32 @@ html {
 
 p {
   text-align: justify;
+}
+
+.block {
+  padding: 5px 15px;
+  margin: 15px 0;
+
+  background-color: #525252;
+
+  &.good {
+    border-left: 7px solid #3eca7a;
+  }
+
+  &.bad {
+    border-left: 7px solid #ca3e47;
+  }
+}
+
+.form-group {
+  margin: 10px 0;
+
+  &.buttons {
+    text-align: right;
+
+    .button {
+      display: inline-block;
+    }
+  }
 }
 </style>
